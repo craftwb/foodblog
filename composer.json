@@ -6,6 +6,10 @@
 	"require": {
 		"laravel/framework": "4.2.*"
 	},
+    "require-dev": {
+        "codeception/codeception": "dev-master",
+        "phpspec/phpspec": "2.1.*@dev"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",
