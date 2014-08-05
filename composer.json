@@ -8,7 +8,9 @@
 	},
     "require-dev": {
         "codeception/codeception": "dev-master",
-        "phpspec/phpspec": "2.1.*@dev"
+        "phpspec/phpspec": "2.1.*@dev",
+        "way/generators": "dev-master",
+        "fzaninotto/faker": "1.5.*@dev"
     },
 	"autoload": {
 		"classmap": [
