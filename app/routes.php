@@ -1,13 +1,16 @@
 <?php
 
 
-Route::get('/', 'HomeController@index');
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);
 
-Route::resource('/posts', 'PostsController', ['only' => [
-    'index', 'show'
-]]);
+Route::resource('/blog', 'PostsController', [
+    'only' => ['index', 'show']
+]);
 
-Route::get('/posts/{id}', [
+Route::get('/blog/posts/{id}', [
     'as' => 'show_post',
     'uses' => 'PostsController@show'
 ]);
