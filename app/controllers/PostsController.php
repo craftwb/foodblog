@@ -1,10 +1,24 @@
 <?php
 
-use Blog\Entities\Post;
+use Blog\Repositories\PostRepositoryInterface;
 
 class PostsController extends \BaseController {
 
-	/**
+    /**
+     * @var PostRepositoryInterface
+     */
+    private $post;
+
+    /**
+     * @param PostRepositoryInterface $post
+     */
+    function __construct(PostRepositoryInterface $post)
+    {
+        $this->post = $post;
+    }
+
+
+    /**
 	 * Display a listing of the resource.
 	 * GET /posts
 	 *
@@ -12,7 +26,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-        $posts = Post::all();
+        $posts = $this->post->getRecentPosts();
 
         return View::make('posts.index', ['posts' => $posts]);
 	}
@@ -27,7 +41,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $post = Post::find($id);
+        $post = $this->post->getSinglePost($id);
 
 		return View::make('posts.show', ['post' => $post]);
 	}
