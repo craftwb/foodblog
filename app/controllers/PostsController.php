@@ -1,5 +1,7 @@
 <?php
 
+use Blog\Entities\Post;
+
 class PostsController extends \BaseController {
 
 	/**
@@ -12,25 +14,22 @@ class PostsController extends \BaseController {
 	{
         $posts = Post::all();
 
-        return View::make('posts.index', array('posts' => $posts));
+        return View::make('posts.index', ['posts' => $posts]);
 	}
 
 
-    /**
-     * Display the specified resource.
-     * GET /posts/{id}
-     *
-     * @param $year
-     * @param $day
-     * @param $month
-     * @param $title
-     * @internal param int $id
-     * @return Response
-     */
-	public function show($year, $day, $month, $title)
+	/**
+	 * Display the specified resource.
+	 * GET /posts/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
 	{
-        $title = str_replace(' ', '-', $title);
-		return 'show post '.$title;
+        $post = Post::find($id);
+
+		return View::make('posts.show', ['post' => $post]);
 	}
 
 

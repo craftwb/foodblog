@@ -1,1 +1,0 @@
-/home/vagrant/Sites/foodblog/app/views/posts/create.blade.php

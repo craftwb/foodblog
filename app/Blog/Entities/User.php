@@ -1,4 +1,4 @@
-<?php
+<?php namespace Blog\Entities;
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;

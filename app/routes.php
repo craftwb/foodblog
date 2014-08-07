@@ -3,6 +3,11 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/blog/posts', 'PostsController@index');
+Route::resource('/posts', 'PostsController', ['only' => [
+    'index', 'show'
+]]);
 
-Route::get('/blog/posts/{year}/{day}/{month}/{title}', 'PostsController@show');
+Route::get('/posts/{id}', [
+    'as' => 'show_post',
+    'uses' => 'PostsController@show'
+]);
