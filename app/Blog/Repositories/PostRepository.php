@@ -9,6 +9,7 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function getRecentPosts()
     {
+        //testing service
         return Post::all();
     }
 
