@@ -7,11 +7,12 @@
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 /**
- * Viewing blog posts
+ * Posts resource
  */
-Route::resource('/blog', 'PostsController', ['only' => ['index', 'show']]);
-Route::get('/blog/posts/{id}', ['as' => 'show_post', 'uses' => 'PostsController@show']);
-
+Route::get('/blog', ['as' => 'blog_home', 'uses' => 'PostsController@index']);
+Route::resource('/posts', 'PostsController', ['only' => ['index', 'show', 'create']]);
+Route::get('/blog/posts/{id}', 'PostsController@show');
+Route::get('/posts/{id}', ['as' => 'show_post', 'uses' => 'PostsController@show']);
 
 /**
  * Login and session related

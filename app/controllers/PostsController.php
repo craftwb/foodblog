@@ -31,6 +31,16 @@ class PostsController extends \BaseController {
         return View::make('posts.index', ['posts' => $posts]);
 	}
 
+    /**
+     * Displays form to create new post
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('posts.create');
+    }
+
 
 	/**
 	 * Display the specified resource.
