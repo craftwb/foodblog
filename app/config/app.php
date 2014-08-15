@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => '9edcmucFmpjKttAr00tVdRFMfjsSIc77',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Blog\Repositories\RepositoryServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider'
 
 	),
 

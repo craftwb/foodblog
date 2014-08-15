@@ -1,5 +1,6 @@
 <?php
 
+use Blog\Entities\User;
 
 class UsersTableSeeder extends Seeder {
 
