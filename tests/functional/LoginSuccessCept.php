@@ -1,6 +1,6 @@
 <?php
 /**
- * Authenticate a user
+ * Successful login
  */
 $I = new FunctionalTester($scenario);
 $I->am('a guest');
@@ -11,4 +11,4 @@ $I->fillField('email', 'pierre@pierreferre.com');
 $I->fillField('password', 'secret');
 $I->click('Login');
 
-$I->see('Login successful');
+$I->seeInCurrentUrl('admin');

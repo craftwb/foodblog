@@ -66,6 +66,8 @@
 
     <div class="container">
 
+        @include('partials/flash')
+
         @yield('content')
 
     </div> <!-- /container -->

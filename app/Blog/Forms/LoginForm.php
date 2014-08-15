@@ -3,7 +3,7 @@
 
 use Laracasts\Validation\FormValidator;
 
-class LoginValidatorForm extends FormValidator {
+class LoginForm extends FormValidator {
 
     /**
      * Validator rules for the login form
@@ -11,7 +11,7 @@ class LoginValidatorForm extends FormValidator {
      * @var array
      */
     protected $rules = [
-        'email'     =>  'required',
+        'email'     =>  'required|email',
         'password'  =>  'required'
     ];
 } 

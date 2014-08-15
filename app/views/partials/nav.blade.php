@@ -20,7 +20,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li>{{ link_to('/login', 'Login')  }}</li>
+                        @if(Auth::guest())
+                            <li>{{ link_to('/login', 'Login')  }}</li>
+                            @else
+                            <li>{{ link_to('/logout', 'Logout')  }}</li>
+                        @endif
                     </ul>
                 </li>
             </ul>

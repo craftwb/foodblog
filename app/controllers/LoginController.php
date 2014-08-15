@@ -1,20 +1,20 @@
 <?php
 
-use Blog\Forms\LoginValidatorForm;
+use Blog\Forms\LoginForm;
 
 class LoginController extends \BaseController {
 
     /**
-     * @var \Blog\Forms\LoginValidatorForm
+     * @var \Blog\Forms\LoginForm
      */
     private $loginForm;
 
     /**
      * Injects the login form validator
      *
-     * @param LoginValidatorForm $loginForm
+     * @param LoginForm $loginForm
      */
-    function __construct(LoginValidatorForm $loginForm)
+    function __construct(LoginForm $loginForm)
     {
         $this->loginForm = $loginForm;
     }
@@ -28,7 +28,7 @@ class LoginController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('logins.create');
+		return View::make('login.create');
 	}
 
 	/**
@@ -39,18 +39,14 @@ class LoginController extends \BaseController {
 	 */
 	public function store()
 	{
-        $userInput = Input::only([
-            'email', 'password'
-        ]);
+        $this->loginForm->validate($input = Input::only('email', 'password'));
 
-        $validated = $this->loginForm->validate($userInput);
-
-        if ($validated)
+        if (Auth::attempt($input))
         {
-            $authenticated = Auth::attempt($userInput);
-            if ($authenticated) return 'Login successful';
+            return Redirect::intended('admin/dashboard')->with(Flash::success('Welcome to the admin area'));
         }
-        return 'Login failed';
+
+        return Redirect::back()->with(Flash::error('Invalid credentials'));
 	}
 
 
@@ -61,7 +57,7 @@ class LoginController extends \BaseController {
      * @internal param int $id
      * @return Response
      */
-	public function destroy()
+	public function destroy($id = null)
 	{
 		Auth::logout();
 
