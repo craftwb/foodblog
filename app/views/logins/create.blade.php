@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    {{ Form::open(['route' => 'logins.store', 'class' => 'form-signin', 'role' => 'form'])  }}
+    {{ Form::open(['route' => 'login.store', 'class' => 'form-signin', 'role' => 'form'])  }}
 
         <h2 class="form-signin-heading">Please sign in</h2>
 

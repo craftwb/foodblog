@@ -26,8 +26,8 @@ Route::get('/blog/posts/{id}', [
 /**
  * Login and session related
  */
-Route::get('/login', 'LoginsController@create');
-Route::get('/logout', 'LoginsController@destroy');
-Route::resource('logins', 'LoginsController', [
+Route::get('/login', 'LoginController@create');
+Route::get('/logout', 'LoginController@destroy');
+Route::resource('login', 'LoginController', [
     'only'  => ['store', 'create', 'destroy']
 ]);

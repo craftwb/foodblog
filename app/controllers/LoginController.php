@@ -2,7 +2,7 @@
 
 use Blog\Forms\LoginValidatorForm;
 
-class LoginsController extends \BaseController {
+class LoginController extends \BaseController {
 
     /**
      * @var \Blog\Forms\LoginValidatorForm
