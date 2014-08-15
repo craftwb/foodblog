@@ -5,6 +5,6 @@ class RecentWidgetComposer {
 
     public function compose($view)
     {
-
+        //get some repository
     }
 } 
