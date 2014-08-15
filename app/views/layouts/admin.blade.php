@@ -54,7 +54,38 @@
 
 			@include('layouts.partials.admin.sidebar')
 
-			@yield('content')
+            <div class="main-content">
+
+                    @include('layouts.partials.admin.breadcrumbs')
+
+                    <div class="page-content">
+
+                        @include('layouts.partials.admin.settings')
+
+                        <div class="page-content-area">
+
+                            <div class="page-header">
+                                <h1>
+                                    Dashboard
+                                    <small>
+                                        <i class="ace-icon fa fa-angle-double-right"></i>
+                                        overview &amp; stats
+                                    </small>
+                                </h1>
+                            </div><!-- /.page-header -->
+
+                            <div class="row">
+                                <div class="col-xs-12">
+
+                                    @include('layouts.partials.flash')
+
+                                    @yield('content')
+
+                                </div><!-- /.col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.page-content-area -->
+                    </div><!-- /.page-content -->
+                </div><!-- /.main-content -->
 
 			@include('layouts.partials.admin.footer')
 
