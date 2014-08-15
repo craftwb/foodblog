@@ -1,6 +1,7 @@
 <?php
 
 use Blog\Repositories\PostRepositoryInterface;
+use Blog\Forms\NewPost;
 
 class PostsController extends \BaseController {
 
@@ -8,13 +9,19 @@ class PostsController extends \BaseController {
      * @var PostRepositoryInterface
      */
     private $post;
+    /**
+     * @var newPostForm
+     */
+    private $newPostForm;
 
     /**
      * @param PostRepositoryInterface $post
+     * @param NewPost $newPostForm
      */
-    function __construct(PostRepositoryInterface $post)
+    function __construct(PostRepositoryInterface $post, NewPost $newPostForm)
     {
         $this->post = $post;
+        $this->newPostForm = $newPostForm;
     }
 
 

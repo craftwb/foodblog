@@ -63,7 +63,7 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="#">
+                                    <a href="/posts/create">
                                         <i class="menu-icon fa fa-caret-right"></i>
                                         New post
                                     </a>

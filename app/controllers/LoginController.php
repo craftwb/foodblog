@@ -1,6 +1,6 @@
 <?php
 
-use Blog\Forms\LoginForm;
+use Blog\Forms\Login;
 
 class LoginController extends \BaseController {
 
@@ -12,9 +12,9 @@ class LoginController extends \BaseController {
     /**
      * Injects the login form validator
      *
-     * @param LoginForm $loginForm
+     * @param Login $loginForm
      */
-    function __construct(LoginForm $loginForm)
+    function __construct(Login $loginForm)
     {
         $this->loginForm = $loginForm;
     }
