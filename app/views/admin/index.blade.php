@@ -2,533 +2,36 @@
 
 @section('content')
 
-    			<div class="main-content">
-    				<!-- #section:basics/content.breadcrumbs -->
-    				<div class="breadcrumbs" id="breadcrumbs">
-    					<script type="text/javascript">
-    						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-    					</script>
+    <div class="main-content">
 
-    					<ul class="breadcrumb">
-    						<li>
-    							<i class="ace-icon fa fa-home home-icon"></i>
-    							<a href="#">Home</a>
-    						</li>
-    						<li class="active">Dashboard</li>
-    					</ul><!-- /.breadcrumb -->
+        @include('layouts.partials.admin.breadcrumbs')
 
-    					<!-- #section:basics/content.searchbox -->
-    					<div class="nav-search" id="nav-search">
-    						<form class="form-search">
-    							<span class="input-icon">
-    								<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-    								<i class="ace-icon fa fa-search nav-search-icon"></i>
-    							</span>
-    						</form>
-    					</div><!-- /.nav-search -->
+        <div class="page-content">
 
-    					<!-- /section:basics/content.searchbox -->
-    				</div>
+            @include('layouts.partials.admin.settings')
 
-    				<!-- /section:basics/content.breadcrumbs -->
-    				<div class="page-content">
-    					<!-- #section:settings.box -->
-    					<div class="ace-settings-container" id="ace-settings-container">
-    						<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-    							<i class="ace-icon fa fa-cog bigger-150"></i>
-    						</div>
+            <div class="page-content-area">
 
-    						<div class="ace-settings-box clearfix" id="ace-settings-box">
-    							<div class="pull-left width-50">
-    								<!-- #section:settings.skins -->
-    								<div class="ace-settings-item">
-    									<div class="pull-left">
-    										<select id="skin-colorpicker" class="hide">
-    											<option data-skin="no-skin" value="#438EB9">#438EB9</option>
-    											<option data-skin="skin-1" value="#222A2D">#222A2D</option>
-    											<option data-skin="skin-2" value="#C6487E">#C6487E</option>
-    											<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-    										</select>
-    									</div>
-    									<span>&nbsp; Choose Skin</span>
-    								</div>
+                <div class="page-header">
+                    <h1>
+                        Dashboard
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                            overview &amp; stats
+                        </small>
+                    </h1>
+                </div><!-- /.page-header -->
 
-    								<!-- /section:settings.skins -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
 
-    								<!-- #section:settings.navbar -->
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
-    									<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
-    								</div>
+                        @include('layouts.partials.flash')
 
-    								<!-- /section:settings.navbar -->
-
-    								<!-- #section:settings.sidebar -->
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
-    									<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
-    								</div>
-
-    								<!-- /section:settings.sidebar -->
-
-    								<!-- #section:settings.breadcrumbs -->
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
-    									<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
-    								</div>
-
-    								<!-- /section:settings.breadcrumbs -->
-
-    								<!-- #section:settings.rtl -->
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
-    									<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
-    								</div>
-
-    								<!-- /section:settings.rtl -->
-
-    								<!-- #section:settings.container -->
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
-    									<label class="lbl" for="ace-settings-add-container">
-    										Inside
-    										<b>.container</b>
-    									</label>
-    								</div>
-
-    								<!-- /section:settings.container -->
-    							</div><!-- /.pull-left -->
-
-    							<div class="pull-left width-50">
-    								<!-- #section:basics/sidebar.options -->
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
-    									<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
-    								</div>
-
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
-    									<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
-    								</div>
-
-    								<div class="ace-settings-item">
-    									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
-    									<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
-    								</div>
-
-    								<!-- /section:basics/sidebar.options -->
-    							</div><!-- /.pull-left -->
-    						</div><!-- /.ace-settings-box -->
-    					</div><!-- /.ace-settings-container -->
-
-    					<!-- /section:settings.box -->
-    					<div class="page-content-area">
-    						<div class="page-header">
-    							<h1>
-    								Dashboard
-    								<small>
-    									<i class="ace-icon fa fa-angle-double-right"></i>
-    									overview &amp; stats
-    								</small>
-    							</h1>
-    						</div><!-- /.page-header -->
-
-    						<div class="row">
-    							<div class="col-xs-12">
-    								<!-- PAGE CONTENT BEGINS -->
-
-    								@include('partials/flash')
-
-    								<div class="row">
-    									<div class="space-6"></div>
-
-    									<div class="col-sm-7 infobox-container">
-    										<!-- #section:pages/dashboard.infobox -->
-    										<div class="infobox infobox-green">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-comments"></i>
-    											</div>
-
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">32</span>
-    												<div class="infobox-content">comments + 2 reviews</div>
-    											</div>
-
-    											<!-- #section:pages/dashboard.infobox.stat -->
-    											<div class="stat stat-success">8%</div>
-
-    											<!-- /section:pages/dashboard.infobox.stat -->
-    										</div>
-
-    										<div class="infobox infobox-blue">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-twitter"></i>
-    											</div>
-
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">11</span>
-    												<div class="infobox-content">new followers</div>
-    											</div>
-
-    											<div class="badge badge-success">
-    												+32%
-    												<i class="ace-icon fa fa-arrow-up"></i>
-    											</div>
-    										</div>
-
-    										<div class="infobox infobox-pink">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-shopping-cart"></i>
-    											</div>
-
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">8</span>
-    												<div class="infobox-content">new orders</div>
-    											</div>
-    											<div class="stat stat-important">4%</div>
-    										</div>
-
-    										<div class="infobox infobox-red">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-flask"></i>
-    											</div>
-
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">7</span>
-    												<div class="infobox-content">experiments</div>
-    											</div>
-    										</div>
-
-    										<div class="infobox infobox-orange2">
-    											<!-- #section:pages/dashboard.infobox.sparkline -->
-    											<div class="infobox-chart">
-    												<span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
-    											</div>
-
-    											<!-- /section:pages/dashboard.infobox.sparkline -->
-    											<div class="infobox-data">
-    												<span class="infobox-data-number">6,251</span>
-    												<div class="infobox-content">pageviews</div>
-    											</div>
-
-    											<div class="badge badge-success">
-    												7.2%
-    												<i class="ace-icon fa fa-arrow-up"></i>
-    											</div>
-    										</div>
-
-    										<div class="infobox infobox-blue2">
-    											<div class="infobox-progress">
-    												<!-- #section:pages/dashboard.infobox.easypiechart -->
-    												<div class="easy-pie-chart percentage" data-percent="42" data-size="46">
-    													<span class="percent">42</span>%
-    												</div>
-
-    												<!-- /section:pages/dashboard.infobox.easypiechart -->
-    											</div>
-
-    											<div class="infobox-data">
-    												<span class="infobox-text">traffic used</span>
-
-    												<div class="infobox-content">
-    													<span class="bigger-110">~</span>
-    													58GB remaining
-    												</div>
-    											</div>
-    										</div>
-
-    										<!-- /section:pages/dashboard.infobox -->
-    										<div class="space-6"></div>
-
-    										<!-- #section:pages/dashboard.infobox.dark -->
-    										<div class="infobox infobox-green infobox-small infobox-dark">
-    											<div class="infobox-progress">
-    												<!-- #section:pages/dashboard.infobox.easypiechart -->
-    												<div class="easy-pie-chart percentage" data-percent="61" data-size="39">
-    													<span class="percent">61</span>%
-    												</div>
-
-    												<!-- /section:pages/dashboard.infobox.easypiechart -->
-    											</div>
-
-    											<div class="infobox-data">
-    												<div class="infobox-content">Task</div>
-    												<div class="infobox-content">Completion</div>
-    											</div>
-    										</div>
-
-    										<div class="infobox infobox-blue infobox-small infobox-dark">
-    											<!-- #section:pages/dashboard.infobox.sparkline -->
-    											<div class="infobox-chart">
-    												<span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
-    											</div>
-
-    											<!-- /section:pages/dashboard.infobox.sparkline -->
-    											<div class="infobox-data">
-    												<div class="infobox-content">Earnings</div>
-    												<div class="infobox-content">$32,000</div>
-    											</div>
-    										</div>
-
-    										<div class="infobox infobox-grey infobox-small infobox-dark">
-    											<div class="infobox-icon">
-    												<i class="ace-icon fa fa-download"></i>
-    											</div>
-
-    											<div class="infobox-data">
-    												<div class="infobox-content">Downloads</div>
-    												<div class="infobox-content">1,205</div>
-    											</div>
-    										</div>
-
-    										<!-- /section:pages/dashboard.infobox.dark -->
-    									</div>
-
-    									<div class="vspace-12-sm"></div>
-
-    									<div class="col-sm-5">
-    										<div class="widget-box">
-    											<div class="widget-header widget-header-flat widget-header-small">
-    												<h5 class="widget-title">
-    													<i class="ace-icon fa fa-signal"></i>
-    													Traffic Sources
-    												</h5>
-
-    												<div class="widget-toolbar no-border">
-    													<div class="inline dropdown-hover">
-    														<button class="btn btn-minier btn-primary">
-    															This Week
-    															<i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
-    														</button>
-
-    														<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
-    															<li class="active">
-    																<a href="#" class="blue">
-    																	<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
-    																	This Week
-    																</a>
-    															</li>
-
-    															<li>
-    																<a href="#">
-    																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-    																	Last Week
-    																</a>
-    															</li>
-
-    															<li>
-    																<a href="#">
-    																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-    																	This Month
-    																</a>
-    															</li>
-
-    															<li>
-    																<a href="#">
-    																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-    																	Last Month
-    																</a>
-    															</li>
-    														</ul>
-    													</div>
-    												</div>
-    											</div>
-
-    											<div class="widget-body">
-    												<div class="widget-main">
-    													<!-- #section:plugins/charts.flotchart -->
-    													<div id="piechart-placeholder"></div>
-
-    													<!-- /section:plugins/charts.flotchart -->
-    													<div class="hr hr8 hr-double"></div>
-
-    													<div class="clearfix">
-    														<!-- #section:custom/extra.grid -->
-    														<div class="grid3">
-    															<span class="grey">
-    																<i class="ace-icon fa fa-facebook-square fa-2x blue"></i>
-    																&nbsp; likes
-    															</span>
-    															<h4 class="bigger pull-right">1,255</h4>
-    														</div>
-
-    														<div class="grid3">
-    															<span class="grey">
-    																<i class="ace-icon fa fa-twitter-square fa-2x purple"></i>
-    																&nbsp; tweets
-    															</span>
-    															<h4 class="bigger pull-right">941</h4>
-    														</div>
-
-    														<div class="grid3">
-    															<span class="grey">
-    																<i class="ace-icon fa fa-pinterest-square fa-2x red"></i>
-    																&nbsp; pins
-    															</span>
-    															<h4 class="bigger pull-right">1,050</h4>
-    														</div>
-
-    														<!-- /section:custom/extra.grid -->
-    													</div>
-    												</div><!-- /.widget-main -->
-    											</div><!-- /.widget-body -->
-    										</div><!-- /.widget-box -->
-    									</div><!-- /.col -->
-    								</div><!-- /.row -->
-
-    								<!-- #section:custom/extra.hr -->
-    								<div class="hr hr32 hr-dotted"></div>
-
-    								<!-- /section:custom/extra.hr -->
-    								<div class="row">
-    									<div class="col-sm-5">
-    										<div class="widget-box transparent">
-    											<div class="widget-header widget-header-flat">
-    												<h4 class="widget-title lighter">
-    													<i class="ace-icon fa fa-star orange"></i>
-    													Popular Domains
-    												</h4>
-
-    												<div class="widget-toolbar">
-    													<a href="#" data-action="collapse">
-    														<i class="ace-icon fa fa-chevron-up"></i>
-    													</a>
-    												</div>
-    											</div>
-
-    											<div class="widget-body">
-    												<div class="widget-main no-padding">
-    													<table class="table table-bordered table-striped">
-    														<thead class="thin-border-bottom">
-    															<tr>
-    																<th>
-    																	<i class="ace-icon fa fa-caret-right blue"></i>name
-    																</th>
-
-    																<th>
-    																	<i class="ace-icon fa fa-caret-right blue"></i>price
-    																</th>
-
-    																<th class="hidden-480">
-    																	<i class="ace-icon fa fa-caret-right blue"></i>status
-    																</th>
-    															</tr>
-    														</thead>
-
-    														<tbody>
-    															<tr>
-    																<td>internet.com</td>
-
-    																<td>
-    																	<small>
-    																		<s class="red">$29.99</s>
-    																	</small>
-    																	<b class="green">$19.99</b>
-    																</td>
-
-    																<td class="hidden-480">
-    																	<span class="label label-info arrowed-right arrowed-in">on sale</span>
-    																</td>
-    															</tr>
-
-    															<tr>
-    																<td>online.com</td>
-
-    																<td>
-    																	<small>
-    																		<s class="red"></s>
-    																	</small>
-    																	<b class="green">$16.45</b>
-    																</td>
-
-    																<td class="hidden-480">
-    																	<span class="label label-success arrowed-in arrowed-in-right">approved</span>
-    																</td>
-    															</tr>
-
-    															<tr>
-    																<td>newnet.com</td>
-
-    																<td>
-    																	<small>
-    																		<s class="red"></s>
-    																	</small>
-    																	<b class="green">$15.00</b>
-    																</td>
-
-    																<td class="hidden-480">
-    																	<span class="label label-danger arrowed">pending</span>
-    																</td>
-    															</tr>
-
-    															<tr>
-    																<td>web.com</td>
-
-    																<td>
-    																	<small>
-    																		<s class="red">$24.99</s>
-    																	</small>
-    																	<b class="green">$19.95</b>
-    																</td>
-
-    																<td class="hidden-480">
-    																	<span class="label arrowed">
-    																		<s>out of stock</s>
-    																	</span>
-    																</td>
-    															</tr>
-
-    															<tr>
-    																<td>domain.com</td>
-
-    																<td>
-    																	<small>
-    																		<s class="red"></s>
-    																	</small>
-    																	<b class="green">$12.00</b>
-    																</td>
-
-    																<td class="hidden-480">
-    																	<span class="label label-warning arrowed arrowed-right">SOLD</span>
-    																</td>
-    															</tr>
-    														</tbody>
-    													</table>
-    												</div><!-- /.widget-main -->
-    											</div><!-- /.widget-body -->
-    										</div><!-- /.widget-box -->
-    									</div><!-- /.col -->
-
-    									<div class="col-sm-7">
-    										<div class="widget-box transparent">
-    											<div class="widget-header widget-header-flat">
-    												<h4 class="widget-title lighter">
-    													<i class="ace-icon fa fa-signal"></i>
-    													Sale Stats
-    												</h4>
-
-    												<div class="widget-toolbar">
-    													<a href="#" data-action="collapse">
-    														<i class="ace-icon fa fa-chevron-up"></i>
-    													</a>
-    												</div>
-    											</div>
-
-    											<div class="widget-body">
-    												<div class="widget-main padding-4">
-    													<div id="sales-charts"></div>
-    												</div><!-- /.widget-main -->
-    											</div><!-- /.widget-body -->
-    										</div><!-- /.widget-box -->
-    									</div><!-- /.col -->
-    								</div><!-- /.row -->
-
-    								<div class="hr hr32 hr-dotted"></div>
-
-    								<div class="row">
-    									<div class="col-sm-6">
-    										<div class="widget-box transparent" id="recent-box">
-    											<div class="widget-header">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="widget-box transparent" id="recent-box">
+                                    <div class="widget-header">
     												<h4 class="widget-title lighter smaller">
     													<i class="ace-icon fa fa-rss orange"></i>RECENT
     												</h4>
@@ -550,10 +53,10 @@
     												</div>
     											</div>
 
-    											<div class="widget-body">
-    												<div class="widget-main padding-4">
-    													<div class="tab-content padding-8">
-    														<div id="task-tab" class="tab-pane active">
+                                    <div class="widget-body">
+                                        <div class="widget-main padding-4">
+                                            <div class="tab-content padding-8">
+                                                <div id="task-tab" class="tab-pane active">
     															<h4 class="smaller lighter green">
     																<i class="ace-icon fa fa-list"></i>
     																Sortable Lists
@@ -666,9 +169,9 @@
     															<!-- /section:pages/dashboard.tasks -->
     														</div>
 
-    														<div id="member-tab" class="tab-pane">
-    															<!-- #section:pages/dashboard.members -->
-    															<div class="clearfix">
+                                                <div id="member-tab" class="tab-pane">
+                                                    <!-- #section:pages/dashboard.members -->
+                                                    <div class="clearfix">
     																<div class="itemdiv memberdiv">
     																	<div class="user">
     																		<img alt="Bob Doe's avatar" src="/admin/assets/avatars/user.jpg" />
@@ -934,24 +437,24 @@
     																</div>
     															</div>
 
-    															<div class="space-4"></div>
+                                                    <div class="space-4"></div>
 
-    															<div class="center">
-    																<i class="ace-icon fa fa-users fa-2x green middle"></i>
+                                                    <div class="center">
+                                                        <i class="ace-icon fa fa-users fa-2x green middle"></i>
 
-    																&nbsp;
-    																<a href="#" class="btn btn-sm btn-white btn-info">
-    																	See all members &nbsp;
-    																	<i class="ace-icon fa fa-arrow-right"></i>
-    																</a>
-    															</div>
+                                                        &nbsp;
+                                                        <a href="#" class="btn btn-sm btn-white btn-info">
+                                                            See all members &nbsp;
+                                                            <i class="ace-icon fa fa-arrow-right"></i>
+                                                        </a>
+                                                    </div>
 
-    															<div class="hr hr-double hr8"></div>
+                                                    <div class="hr hr-double hr8"></div>
 
-    															<!-- /section:pages/dashboard.members -->
-    														</div><!-- /.#member-tab -->
+                                                    <!-- /section:pages/dashboard.members -->
+                                                </div><!-- /.#member-tab -->
 
-    														<div id="comment-tab" class="tab-pane">
+                                                <div id="comment-tab" class="tab-pane">
     															<!-- #section:pages/dashboard.comments -->
     															<div class="comments">
     																<div class="itemdiv commentdiv">
@@ -1129,11 +632,11 @@
 
     															<!-- /section:pages/dashboard.comments -->
     														</div>
-    													</div>
-    												</div><!-- /.widget-main -->
-    											</div><!-- /.widget-body -->
-    										</div><!-- /.widget-box -->
-    									</div><!-- /.col -->
+                                            </div>
+                                        </div><!-- /.widget-main -->
+                                    </div><!-- /.widget-body -->
+                                </div><!-- /.widget-box -->
+                            </div><!-- /.col -->
 
     									<div class="col-sm-6">
     										<div class="widget-box">
@@ -1290,11 +793,11 @@
     									</div><!-- /.col -->
     								</div><!-- /.row -->
 
-    								<!-- PAGE CONTENT ENDS -->
-    							</div><!-- /.col -->
-    						</div><!-- /.row -->
-    					</div><!-- /.page-content-area -->
-    				</div><!-- /.page-content -->
-    			</div><!-- /.main-content -->
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content-area -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
 
 @stop

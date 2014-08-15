@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 copy-left">
-                <p>Copyright &copy; 2014 <strong>Craftwb</strong>. All Right Reserved.</p>
+                <p>Copyright &copy; {{ date('Y') }} <strong>Craftwb</strong>. All Right Reserved.</p>
             </div>
 
             <div class="col-md-6 col-sm-6 copy-right">

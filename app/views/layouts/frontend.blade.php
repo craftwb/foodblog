@@ -29,7 +29,7 @@
 
 <body>
 
-@include('partials.nav')
+@include('layouts.partials.frontend.nav')
 
 <!-- begin:header -->
 <section id="header" style="background: url(/frontend/img/img03.jpg) center center;">
@@ -83,9 +83,9 @@
 
 <!-- end:content -->
 
-@include('partials.footer')
+@include('layouts.partials.frontend.footer')
 
-@include('partials.copyright')
+@include('layouts.partials.frontend.copyright')
 
 
 <!-- Bootstrap core JavaScript

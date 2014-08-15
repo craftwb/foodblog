@@ -1,8 +1,8 @@
-@extends('layouts/login')
+@extends('layouts.login')
 
 @section('content')
 
-@include('partials/errors')
+@include('layouts.partials.errors')
 
     {{ Form::open(['route' => 'login.store', 'class' => 'form-signin', 'role' => 'form'])  }}
 
