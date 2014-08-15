@@ -23,6 +23,7 @@
                         @if(Auth::guest())
                             <li>{{ link_to('/login', 'Login')  }}</li>
                             @else
+                            <li>{{ link_to_route('admin_dashboard', 'Dashboard')  }}</li>
                             <li>{{ link_to('/logout', 'Logout')  }}</li>
                         @endif
                     </ul>
