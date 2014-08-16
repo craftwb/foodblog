@@ -14,10 +14,11 @@ class PostsTableSeeder extends Seeder {
 		foreach(range(1, 10) as $index)
 		{
 			Post::create([
-                'title' =>  $faker->sentence(),
-                'body'  =>  $faker->paragraph(2),
-                'user_id' => $faker->numberBetween(1,5),
-                'published_at'  =>  $faker->dateTimeBetween('now', '+ 7 days')
+                'title'         =>  $faker->sentence(),
+                'author'        =>  $faker->numberBetween(1,5),
+                'body'          =>  $faker->paragraph(2),
+                'tag'           =>  $faker->word,
+                'published_at'  =>  $faker->dateTimeBetween('- 7 days', 'now')
 			]);
 		}
 	}

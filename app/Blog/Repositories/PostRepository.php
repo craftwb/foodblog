@@ -21,4 +21,17 @@ class PostRepository implements PostRepositoryInterface {
     {
         return Post::findOrFail($id);
     }
+
+    /**
+     * @param $input
+     * @return mixed
+     */
+    public function createPost($input)
+    {
+        $post = new Post();
+        $post->title = $input['title'];
+        $post->body = $input['body'];
+        $post->published_at = new \DateTime();
+        $post->save();
+    }
 }

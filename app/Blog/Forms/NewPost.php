@@ -3,7 +3,7 @@
 
 use Laracasts\Validation\FormValidator;
 
-class CreatePostForm extends FormValidator {
+class NewPost extends FormValidator {
 
     /**
      * Rules for creating a new post form

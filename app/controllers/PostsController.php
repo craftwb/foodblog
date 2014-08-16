@@ -63,5 +63,20 @@ class PostsController extends \BaseController {
 		return View::make('posts.show', ['post' => $post]);
 	}
 
+    /**
+     * @return Response
+     */
+    public function store()
+    {
+        if ( !$this->newPostForm->validate($input = Input::only(['title', 'body'])))
+        {
+            return Redirect::back()->with(Flash::error('The form is invalid'));
+        }
+
+        $this->post->createPost($input);
+
+        return Redirect::route('admin_dashboard')->with(Flash::success('Post created'));
+    }
+
 
 }

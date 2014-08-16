@@ -50,7 +50,7 @@
                     <li class="">
 
                             <a href="#" class="dropdown-toggle">
-                                <i class="menu-icon glyphicon glyphicon-comment"></i>
+                                <i class="menu-icon glyphicon glyphicon-pushpin"></i>
 
                                 <span class="menu-text">
                                     Posts

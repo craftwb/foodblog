@@ -13,4 +13,10 @@ interface PostRepositoryInterface {
      * @return mixed
      */
     public function getSinglePost($id);
+
+    /**
+     * @param $input
+     * @return mixed
+     */
+    public function createPost($input);
 } 

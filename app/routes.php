@@ -10,7 +10,7 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
  * Posts resource
  */
 Route::get('/blog', ['as' => 'blog_home', 'uses' => 'PostsController@index']);
-Route::resource('/posts', 'PostsController', ['only' => ['index', 'show', 'create']]);
+Route::resource('/posts', 'PostsController', ['only' => ['index', 'show', 'create', 'store']]);
 Route::get('/blog/posts/{id}', 'PostsController@show');
 Route::get('/posts/{id}', ['as' => 'show_post', 'uses' => 'PostsController@show']);
 
