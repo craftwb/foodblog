@@ -30,4 +30,14 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
      */
     protected $fillable = ['email', 'password'];
 
+    /**
+     * Get Posts associated to this user
+     *
+     * @return Blog\Entities\Post
+     */
+    public function posts()
+    {
+    	return $this->hasMany('Post');
+    }
+
 }

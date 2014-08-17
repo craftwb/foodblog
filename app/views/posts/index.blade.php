@@ -20,7 +20,7 @@
                             </div>
                             <div class="post-meta">
                                 <span><em>By <a href="#">tarjono</a></em></span>
-                                <span><em>On May 04, 2014</em></span>
+                                <span><em>{{ $post->published_at->diffForHumans()  }}</em></span>
                                 <span><em>In <a href="#">Love life</a></em></span>
                             </div>
 

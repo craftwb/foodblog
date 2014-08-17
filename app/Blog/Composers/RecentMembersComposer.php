@@ -1,7 +1,7 @@
 <?php namespace Blog\Composers;
 
 
-class RecentWidgetComposer {
+class RecentMembersComposer {
 
     public function compose($view)
     {
