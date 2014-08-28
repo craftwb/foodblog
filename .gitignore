@@ -7,5 +7,5 @@ composer.lock
 .DS_Store
 Thumbs.db
 .idea/
-
 tests/_output/*
+_ide_helper.php

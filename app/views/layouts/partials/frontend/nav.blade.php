@@ -9,14 +9,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-recycle"></i> <span>Culinary Honey</span>pie.</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-recycle"></i> <span>Culinary Honey</span>pie.</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-top">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">{{ link_to_route('home', 'Home') }}</li>
-                <li>{{ link_to('/blog', 'Blog') }}</li>
+                <li class="{{ set_active('/')  }}">{{ link_to_route('home', 'Home') }}</li>
+                <li class="{{ set_active('blog')  }}">{{ link_to('/blog', 'Blog') }}</li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
                     <ul class="dropdown-menu">

@@ -125,6 +125,7 @@ return array(
         'Blog\Repositories\RepositoryServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 

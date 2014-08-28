@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "laracasts/validation": "1.2.*",
-		"laracasts/flash": "~1.0"
+		"laracasts/flash": "~1.0",
+		"barryvdh/laravel-ide-helper": "1.*"
 	},
     "require-dev": {
         "codeception/codeception": "dev-master",
@@ -24,7 +25,8 @@
 		],
         "psr-4": {
             "Blog\\": "app/Blog"
-        }
+        },
+        "files": ["app/Blog/Helpers/helpers.php"]
 	},
 	"scripts": {
 		"post-install-cmd": [
