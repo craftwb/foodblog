@@ -25,7 +25,7 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function getRecentPosts()
     {
-        return Post::all();
+        return Post::orderBy('published_at', 'DESC')->limit(5)->get();
     }
 
     /**
