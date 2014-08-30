@@ -1,8 +1,23 @@
 <?php namespace Blog\Repositories;
 
 use Blog\Entities\Post;
+use Michelf\Markdown;
 
 class PostRepository implements PostRepositoryInterface {
+
+    /**
+     * @var
+     */
+    private $parser;
+
+    /**
+     * @param Markdown $parser
+     */
+    function __construct(Markdown $parser)
+    {
+        $this->parser = $parser;
+    }
+
 
     /**
      * @return mixed
@@ -30,7 +45,7 @@ class PostRepository implements PostRepositoryInterface {
     {
         $post = new Post();
         $post->title = $input['title'];
-        $post->body = $input['body'];
+        $post->body = $this->parser->defaultTransform($input['body']);
         $post->published_at = new \DateTime();
         $post->save();
     }
