@@ -4,7 +4,7 @@ class Post extends \Eloquent {
     /**
      * @var array
      */
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'categories' ,'body'];
 
     /**
      * Converts to instances of Carbon
@@ -17,12 +17,20 @@ class Post extends \Eloquent {
     }
 
     /**
-     * Get the associated User
+     * Get the associated Users
      * 
      * @return Blog\Entities\User
      */
     public function user()
     {
-    	return $this->belongsTo('User');
+    	return $this->belongsTo('Blog\Entities\User');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany('Blog\Entities\Category');
     }
 }

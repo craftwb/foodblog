@@ -21,7 +21,13 @@
                             <div class="post-meta">
                                 <span><em>By <a href="#">tarjono</a></em></span>
                                 <span><em>{{ $post->published_at->diffForHumans()  }}</em></span>
-                                <span><em>In <a href="#">Love life</a></em></span>
+                                <span>
+                                    <em>In
+                                        @foreach($post->categories as $category)
+                                            <a href="#">{{ $category->name  }}</a>
+                                        @endforeach
+                                    </em>
+                                </span>
                             </div>
 
                             <p>{{ $post->body }}</p>

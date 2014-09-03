@@ -28,6 +28,11 @@ class PostRepository implements PostRepositoryInterface {
         return Post::orderBy('published_at', 'DESC')->limit(5)->get();
     }
 
+    public function getUserPost()
+    {
+        return Post::has('User');
+    }
+
     /**
      * @param $id
      * @return mixed

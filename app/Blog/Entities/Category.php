@@ -2,4 +2,12 @@
 
 class Category extends \Eloquent {
 	protected $fillable = ['tag'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany('Blog\Entities\Post');
+    }
 }
