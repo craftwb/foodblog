@@ -15,10 +15,16 @@ Route::get('/blog/posts/{id}', 'PostsController@show');
 Route::get('/posts/{id}', ['as' => 'show_post', 'uses' => 'PostsController@show']);
 
 /**
- *  Users resouce
+ *  Users resource
  */
 Route::get('/users', 'UsersController@index');
 Route::get('/users/{id}', 'UsersController@show');
+
+/**
+ *  Categories resource
+ */
+Route::get('/categories', 'CategoriesController@index');
+Route::get('/categories/{id}', 'CategoriesController@show');
 
 /**
  * Login and session related

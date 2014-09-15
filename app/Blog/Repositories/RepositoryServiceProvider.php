@@ -20,5 +20,10 @@ class RepositoryServiceProvider extends ServiceProvider {
             'Blog\Repositories\User\UserRepositoryInterface',
             'Blog\Repositories\User\UserRepository'
         );
+
+        $this->app->bind(
+            'Blog\Repositories\Category\CategoryRepositoryInterface',
+            'Blog\Repositories\Category\CategoryRepository'
+        );
     }
 }
