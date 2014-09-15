@@ -1,6 +1,6 @@
 <?php namespace Blog\Composers;
 
-use Blog\Entities\Category;
+use Blog\Repositories\Category\CategoryRepositoryInterface;
 
 class CategoriesSidebarComposer {
 
@@ -9,13 +9,13 @@ class CategoriesSidebarComposer {
      */
     private $category;
 
-    function __construct(Category $category)
+    function __construct(CategoryRepositoryInterface $category)
     {
         $this->category = $category;
     }
 
     function compose($view)
     {
-        $view->with('categories', $this->category->all());
+        $view->with('categories', $this->category->getAllCategories());
     }
 }
