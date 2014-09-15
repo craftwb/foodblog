@@ -15,6 +15,12 @@ Route::get('/blog/posts/{id}', 'PostsController@show');
 Route::get('/posts/{id}', ['as' => 'show_post', 'uses' => 'PostsController@show']);
 
 /**
+ *  Users resouce
+ */
+Route::get('/users', 'UsersController@index');
+Route::get('/users/{id}', 'UsersController@show');
+
+/**
  * Login and session related
  */
 Route::get('/login', ['as'  => 'login', 'uses'  =>  'LoginController@create'] );

@@ -1,4 +1,4 @@
-<?php namespace Blog\Repositories;
+<?php namespace Blog\Repositories\Post;
 
 use Blog\Entities\Post;
 use Michelf\Markdown;

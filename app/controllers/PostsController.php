@@ -1,6 +1,6 @@
 <?php
 
-use Blog\Repositories\PostRepositoryInterface;
+use Blog\Repositories\Post\PostRepositoryInterface;
 use Blog\Forms\NewPost;
 
 class PostsController extends \BaseController {
