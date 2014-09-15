@@ -11,12 +11,19 @@
                 <div class="row">
                     <div class="col-md-12 post-single">
                         <div class="heading-title">
-                            <h2><a href="single.html">{{ $post->title  }}</h2>
+                            <h2>{{ link_to_route('show_post', $post->title, [ 'id' => $post->id ])  }}</h2>
                         </div>
                         <div class="post-meta">
-                            <span><em>By <a href="#">tarjono</a></em></span>
+                            <span><em>By <a href="#">{{ $post->user->name  }}</a></em></span>
                             <span><em>{{ $post->published_at  }}</em></span>
-                            <span><em>In <a href="#">Love life</a></em></span>
+                            <span>
+                                <em>
+                                    In
+                                    @foreach($post->categories as $category)
+                                         <a href="#">{{ $category->name  }}</a>
+                                    @endforeach
+                                </em>
+                            </span>
                         </div>
                         <p>{{ $post->body }}</p>
 

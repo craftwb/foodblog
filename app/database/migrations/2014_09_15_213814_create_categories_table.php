@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class RemoveTagFromPostsTable extends Migration {
+class CreateCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,11 @@ class RemoveTagFromPostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('posts', function(Blueprint $table)
+		Schema::create('categories', function(Blueprint $table)
 		{
-			$table->dropColumn('tag');
+			$table->increments('id');
+			$table->string('name');
+			$table->timestamps();
 		});
 	}
 
@@ -26,10 +28,7 @@ class RemoveTagFromPostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('posts', function(Blueprint $table)
-		{
-			$table->string('tag');
-		});
+		Schema::drop('categories');
 	}
 
 }

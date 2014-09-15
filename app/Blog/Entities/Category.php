@@ -1,7 +1,7 @@
 <?php namespace Blog\Entities;
 
 class Category extends \Eloquent {
-	protected $fillable = ['tag'];
+	protected $fillable = ['name'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

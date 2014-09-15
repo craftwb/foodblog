@@ -4,7 +4,7 @@ class Post extends \Eloquent {
     /**
      * @var array
      */
-    protected $fillable = ['title', 'categories' ,'body'];
+    protected $fillable = ['title', 'body'];
 
     /**
      * Converts to instances of Carbon

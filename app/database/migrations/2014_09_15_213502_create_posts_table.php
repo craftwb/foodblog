@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddUserIdToPostsTable extends Migration {
+class CreatePostsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,14 @@ class AddUserIdToPostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('posts', function(Blueprint $table)
+		Schema::create('posts', function(Blueprint $table)
 		{
+			$table->increments('id');
+			$table->string('title');
+			$table->string('body');
 			$table->integer('user_id');
+			$table->datetime('published_at');
+			$table->timestamps();
 		});
 	}
 
@@ -26,10 +31,7 @@ class AddUserIdToPostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('posts', function(Blueprint $table)
-		{
-			$table->dropColumn('user_id');
-		});
+		Schema::drop('posts');
 	}
 
 }

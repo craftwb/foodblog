@@ -19,7 +19,7 @@
                                 <h2>{{ link_to_route('show_post', $post->title, [ 'id' => $post->id ]) }}</h2>
                             </div>
                             <div class="post-meta">
-                                <span><em>By <a href="#">tarjono</a></em></span>
+                                <span><em>By <a href="#">{{ $post->user->name  }}</a></em></span>
                                 <span><em>{{ $post->published_at->diffForHumans()  }}</em></span>
                                 <span>
                                     <em>In
