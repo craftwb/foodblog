@@ -1,6 +1,8 @@
 <?php namespace Blog\Repositories\Post;
 
 use Blog\Entities\Post;
+use Blog\Entities\User;
+use Illuminate\Support\Facades\Auth;
 use Michelf\Markdown;
 
 class PostRepository implements PostRepositoryInterface {
@@ -9,13 +11,19 @@ class PostRepository implements PostRepositoryInterface {
      * @var
      */
     private $parser;
+    /**
+     * @var Post
+     */
+    private $post;
 
     /**
      * @param Markdown $parser
+     * @param Post $post
      */
-    function __construct(Markdown $parser)
+    function __construct(Markdown $parser, Post $post)
     {
         $this->parser = $parser;
+        $this->post = $post;
     }
 
 
@@ -25,7 +33,7 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function getRecentPosts()
     {
-        return Post::orderBy('published_at', 'DESC')->limit(5)->get();
+        return $this->post->orderBy('published_at', 'DESC')->limit(5)->get();
     }
 
     /**
@@ -34,7 +42,7 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function getSinglePost($id)
     {
-        return Post::findOrFail($id);
+        return $this->post->findOrFail($id);
     }
 
     /**
@@ -43,10 +51,16 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function createPost($input)
     {
-        $post = new Post();
-        $post->title = $input['title'];
-        $post->body = $this->parser->defaultTransform($input['body']);
-        $post->published_at = new \DateTime();
+        $user = User::find(\Auth::id());
+
+        $post = Post::create([
+            'title' => $input['title'],
+            'body' => $input['body'],
+            'published_at' => new \DateTime()
+        ]);
+
+        $post->user()->associate($user);
         $post->save();
+        $post->categories()->sync([$input['category']]);
     }
 }

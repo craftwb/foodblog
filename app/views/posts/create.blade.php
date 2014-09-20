@@ -10,8 +10,12 @@
 
                 <h2 class="form-signin-heading">Add New Post</h2>
 
-                <div>
+                <div class="form-group">
                     {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter title'])  }}
+                </div>
+
+                <div class="form-group">
+                    {{ Form::select('category', $categories, [ 'class' => 'form-control' ]) }}
                 </div>
 
                 <div class="widget-box widget-color-blue">

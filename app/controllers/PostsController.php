@@ -1,5 +1,6 @@
 <?php
 
+use Blog\Entities\Category;
 use Blog\Repositories\Post\PostRepositoryInterface;
 use Blog\Forms\NewPost;
 
@@ -13,6 +14,10 @@ class PostsController extends \BaseController {
      * @var newPostForm
      */
     private $newPostForm;
+    /**
+     * @var CategoryRepositoryInterface
+     */
+    private $category;
 
     /**
      * @param PostRepositoryInterface $post
@@ -45,7 +50,9 @@ class PostsController extends \BaseController {
      */
     public function create()
     {
-        return View::make('posts.create');
+        $categories = Category::lists('name', 'id');
+
+        return View::make('posts.create', [ 'categories' => $categories ]);
     }
 
 
@@ -68,11 +75,10 @@ class PostsController extends \BaseController {
      */
     public function store()
     {
-        if ( !$this->newPostForm->validate($input = Input::only(['title', 'body'])))
+        if ( !$this->newPostForm->validate($input = Input::only(['title', 'category', 'body'])))
         {
             return Redirect::back()->with(Flash::error('The form is invalid'));
         }
-
         $this->post->createPost($input);
 
         return Redirect::route('admin_dashboard')->with(Flash::success('Post created'));

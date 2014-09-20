@@ -12,7 +12,6 @@ class NewPost extends FormValidator {
      */
     protected $rules = [
         'title'     =>  'required',
-        'category'	=>	'required',
         'body'      =>  'required'
     ];
 
