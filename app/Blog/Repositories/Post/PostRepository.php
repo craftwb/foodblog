@@ -2,7 +2,6 @@
 
 use Blog\Entities\Post;
 use Blog\Entities\User;
-use Illuminate\Support\Facades\Auth;
 use Michelf\Markdown;
 
 class PostRepository implements PostRepositoryInterface {
@@ -51,16 +50,23 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function createPost($input)
     {
+        $user = $this->getCurrentUser();
+
+        $this->post->title = $input['title'];
+        $this->post->body = $input['body'];
+        $this->post->published_at = new \DateTime();
+
+        $this->post->user()->associate($user);
+        $this->post->save();
+        $this->post->categories()->sync([$input['category']]);
+    }
+
+    /**
+     * @return \Illuminate\Support\Collection|static
+     */
+    public function getCurrentUser()
+    {
         $user = User::find(\Auth::id());
-
-        $post = Post::create([
-            'title' => $input['title'],
-            'body' => $input['body'],
-            'published_at' => new \DateTime()
-        ]);
-
-        $post->user()->associate($user);
-        $post->save();
-        $post->categories()->sync([$input['category']]);
+        return $user;
     }
 }

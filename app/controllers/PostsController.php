@@ -79,6 +79,7 @@ class PostsController extends \BaseController {
         {
             return Redirect::back()->with(Flash::error('The form is invalid'));
         }
+
         $this->post->createPost($input);
 
         return Redirect::route('admin_dashboard')->with(Flash::success('Post created'));
