@@ -1,7 +1,7 @@
 <?php namespace Blog\Repositories\Post;
 
 
-interface PostRepositoryInterface {
+interface PostRepositoryInterface  {
 
     /**
      * @return mixed

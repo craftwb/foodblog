@@ -16,6 +16,15 @@ class UsersTableSeeder extends Seeder {
                 'role'  =>  'administrator'
             ]
         );
+
+        User::create(
+            [
+                'name'  =>  'Jane Ferré',
+                'email' =>  'ladyjanemcgill@yahoo.co.uk',
+                'password'  => Hash::make('bbpie'),
+                'role'  =>  'administrator'
+            ]
+        );
 	}
 
 }

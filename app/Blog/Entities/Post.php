@@ -1,6 +1,8 @@
 <?php namespace Blog\Entities;
 
-class Post extends \Eloquent {
+use Eloquent;
+
+class Post extends Eloquent {
     /**
      * @var array
      */

@@ -67,6 +67,7 @@ class PostRepository implements PostRepositoryInterface {
     public function getCurrentUser()
     {
         $user = User::find(\Auth::id());
+
         return $user;
     }
 }
