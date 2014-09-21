@@ -14,10 +14,7 @@ class PostsController extends \BaseController {
      * @var newPostForm
      */
     private $newPostForm;
-    /**
-     * @var CategoryRepositoryInterface
-     */
-    private $category;
+
 
     /**
      * @param PostRepositoryInterface $post
@@ -43,18 +40,6 @@ class PostsController extends \BaseController {
         return View::make('posts.index', ['posts' => $posts]);
 	}
 
-    /**
-     * Displays form to create new post
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        $categories = Category::lists('name', 'id');
-
-        return View::make('posts.create', [ 'categories' => $categories ]);
-    }
-
 
 	/**
 	 * Display the specified resource.
@@ -69,21 +54,6 @@ class PostsController extends \BaseController {
 
 		return View::make('posts.show', ['post' => $post]);
 	}
-
-    /**
-     * @return Response
-     */
-    public function store()
-    {
-        if ( !$this->newPostForm->validate($input = Input::only(['title', 'category', 'body'])))
-        {
-            return Redirect::back()->with(Flash::error('The form is invalid'));
-        }
-
-        $this->post->createPost($input);
-
-        return Redirect::route('admin_dashboard')->with(Flash::success('Post created'));
-    }
 
 
 }

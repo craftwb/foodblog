@@ -1,12 +1,12 @@
-@extends('layouts.admin')
+@extends('......layouts.admin')
 
 @section('content')
 
-@include('layouts.partials.errors')
+@include('......layouts.partials.errors')
 
     <div class="row">
         <div class="col-xs-9">
-            {{ Form::open(['route' => 'posts.store', 'class' => 'form-group', 'role' => 'form'])  }}
+            {{ Form::open(['route' => 'admin.posts.store', 'class' => 'form-group', 'role' => 'form'])  }}
 
                 <h2 class="form-signin-heading">Add New Post</h2>
 

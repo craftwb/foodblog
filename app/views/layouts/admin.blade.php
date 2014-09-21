@@ -131,6 +131,7 @@
 		<script src="/admin/assets/js/ace.min.js"></script>
 		<script src="/admin/assets/js/markdown/bootstrap-markdown.min.js"></script>
         <script src="/admin/assets/js/markdown/markdown.min.js"></script>
+       	<script src="/admin/assets/js/custom.js"></script>
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			jQuery(function($) {

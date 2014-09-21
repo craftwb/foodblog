@@ -30,7 +30,7 @@ class CategoryRepository implements CategoryRepositoryInterface {
      */
     public function getSingleCategory($id)
     {
-        // TODO: Implement getSingleCategory() method.
+        return $this->category->findOrFail($id);
     }
 
     /**
@@ -39,6 +39,34 @@ class CategoryRepository implements CategoryRepositoryInterface {
      */
     public function createCategory($input)
     {
-        // TODO: Implement createCategory() method.
+        $category = Category::create([
+                'name' => $input['name']
+            ]
+        );
+
+        $category->save();
+    }
+
+
+    /**
+     * @param $id The id of the Category
+     */
+    public function update($id)
+    {
+        $category = Category::findOrFail($id);
+
+        $category->fill(\Input::all());
+
+        $category->save();
+    }
+
+    /**
+     * @param $id
+     */
+    public function delete($id)
+    {
+        $category = Category::findOrFail($id);
+
+        $category->delete($category);
     }
 }

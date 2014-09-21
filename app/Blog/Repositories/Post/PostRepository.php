@@ -70,4 +70,30 @@ class PostRepository implements PostRepositoryInterface {
 
         return $user;
     }
+
+    /**
+     * Updates the Post
+     *
+     * @param $id
+     */
+    public function update($id)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->fill(\Input::all());
+
+        $post->save();
+    }
+
+    /**
+     * Deletes the Post
+     *
+     * @param $id
+     */
+    public function delete($id)
+    {
+        $post = Post::findOrFail($id);
+
+        $post->delete($post);
+    }
 }

@@ -63,7 +63,7 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="/posts/create">
+                                    <a href="{{ URL::route('admin.posts.create') }}">
                                         <i class="menu-icon fa fa-caret-right"></i>
                                         New post
                                     </a>
@@ -72,9 +72,45 @@
                                 </li>
 
                                 <li class="">
-                                    <a href="error-404.html">
+                                    <a href="{{ URL::route('admin.posts.index') }}">
                                         <i class="menu-icon fa fa-caret-right"></i>
                                         View all posts
+                                    </a>
+
+                                    <b class="arrow"></b>
+                                </li>
+
+                            </ul>
+                    </li>
+
+                    <li class="">
+
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon glyphicon glyphicon-pushpin"></i>
+
+                                <span class="menu-text">
+                                    Categories
+                                </span>
+
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <b class="arrow"></b>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="{{ URL::route('admin.categories.create') }}">
+                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        New category
+                                    </a>
+
+                                    <b class="arrow"></b>
+                                </li>
+
+                                <li class="">
+                                    <a href="{{ URL::route('admin.categories.index') }}">
+                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        View all categories
                                     </a>
 
                                     <b class="arrow"></b>

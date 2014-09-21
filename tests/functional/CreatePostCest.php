@@ -14,7 +14,7 @@ class CreatePostCest
     // tests
     public function test_it_creates_a_new_post(FunctionalTester $I)
     {
-        $I->amOnPage('/posts/create');
+        $I->amOnPage('/admin/posts/create');
         $I->fillField('title', 'some title');
         $I->fillField('body', 'some body');
         $I->selectOption('category', '2');
