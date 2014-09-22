@@ -32,9 +32,6 @@ Route::get('/admin/dashboard', [
     'as' => 'admin_dashboard',
     'uses' => 'AdminController@index'
 ]);
-Route::resource('admin', 'AdminController@index', [
-    'only' => [ 'index' ]
-]);
 
 /**
  * Login and session related

@@ -9,6 +9,7 @@ class UsersController extends \BaseController {
      * @var UserRepositoryInterface
      */
     private $user;
+    
 
     function __construct(UserRepositoryInterface $user)
     {

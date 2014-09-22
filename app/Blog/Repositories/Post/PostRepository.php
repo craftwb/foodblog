@@ -25,6 +25,13 @@ class PostRepository implements PostRepositoryInterface {
         $this->post = $post;
     }
 
+    /**
+     * Return paginated list of posts
+     */
+    public function getPaginatedPosts()
+    {
+        return Post::paginate(5);
+    }
 
     /**
      * @return mixed

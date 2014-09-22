@@ -35,7 +35,7 @@ class AdminPostsController extends \BaseController {
 	 */
 	public function index()
 	{
-        $posts = $this->post->getRecentPosts();
+        $posts = $this->post->getPaginatedPosts();
 
         return View::make('admin.posts.index', ['posts' => $posts]);
 	}
@@ -127,7 +127,7 @@ class AdminPostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		if (! $this->post->delete($id) )
+		if ( !$this->post->delete($id) )
         {
             Redirect::back()->with(Flash::error('There was an error deleting this resource'));
         }
