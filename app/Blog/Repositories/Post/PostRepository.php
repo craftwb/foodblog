@@ -35,7 +35,6 @@ class PostRepository implements PostRepositoryInterface {
 
     /**
      * @return mixed
-     * @todo Return latest posts
      */
     public function getRecentPosts()
     {

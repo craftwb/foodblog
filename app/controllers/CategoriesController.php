@@ -59,12 +59,14 @@ class CategoriesController extends \BaseController {
 	{
         if ( ! $this->newCategoryForm->validate($input = Input::all()) )
         {
-            Redirect::back()->with(Flash::error('This form is invalid'));
+            Redirect::back()
+                ->with(Flash::error('This form is invalid'));
         }
 
         $this->category->createCategory($input);
 
-        return Redirect::route('admin.categories.index')->with(Flash::success('New category created'));
+        return Redirect::route('admin.categories.index')
+            ->with(Flash::success('New category created'));
 	}
 
 	/**
@@ -106,10 +108,12 @@ class CategoriesController extends \BaseController {
 	{
 		if (!$this->category->update($id))
 		{
-			Redirect::back()->with(Flash::error('Could not update the resource'));
+			Redirect::back()
+                ->with(Flash::error('Could not update the resource'));
 		}
 
-		return Redirect::route('admin.categories.index')->with(Flash::success('Category updated'));
+		return Redirect::route('admin.categories.index')
+            ->with(Flash::success('Category updated'));
 	}
 
 	/**
@@ -123,10 +127,12 @@ class CategoriesController extends \BaseController {
 	{
 		if (!$this->category->delete($id))
         {
-            Redirect::back()->with(Flash::error('Could not delete the category'));
+            Redirect::back()
+                ->with(Flash::error('Could not delete the category'));
         }
 
-        return Redirect::route('admin.categories.index')->with(Flash::success('Successfully deleted this category'));
+        return Redirect::route('admin.categories.index')
+            ->with(Flash::success('Successfully deleted this category'));
 	}
 
 }
