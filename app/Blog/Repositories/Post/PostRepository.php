@@ -30,7 +30,8 @@ class PostRepository implements PostRepositoryInterface {
      */
     public function getPaginatedPosts()
     {
-        return Post::paginate(5);
+        $post = Post::orderBy('created_at', 'DESC');
+        return $post->paginate(5);
     }
 
     /**
