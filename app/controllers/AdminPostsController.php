@@ -71,19 +71,6 @@ class AdminPostsController extends \BaseController {
         return Redirect::route('admin_dashboard')->with(Flash::success('Post created'));
 	}
 
-	/**
-	 * Display the specified resource.
-	 * GET /admin/posts/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-        $post = $this->post->getSinglePost($id);
-
-        return View::make('admin.posts.show', ['post' => $post]);
-	}
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -124,13 +111,15 @@ class AdminPostsController extends \BaseController {
 	 *
 	 * @param  int  $id
 	 * @return Response
+     *
+     * @todo Write a unit test for this failing path
 	 */
 	public function destroy($id)
 	{
-		if ( !$this->post->delete($id) )
-        {
-            Redirect::back()->with(Flash::error('There was an error deleting this resource'));
-        }
+//		if ( !$this->post->delete($id) )
+//        {
+//            Redirect::back()->with(Flash::error('Could not delete this resource'));
+//        }
 
         $this->post->delete($id);
 

@@ -26,7 +26,9 @@ Route::get('/blog/posts/{id}', [
  * Administer those resources
  */
 Route::when('admin/*', 'auth');
-Route::resource('/admin/posts', 'AdminPostsController');
+Route::resource('/admin/posts', 'AdminPostsController', [
+    'except' => [ 'show' ]
+]);
 Route::resource('/admin/categories', 'CategoriesController');
 Route::get('/admin/dashboard', [
     'as' => 'admin_dashboard',

@@ -20,7 +20,7 @@ class Post extends Eloquent {
 
     /**
      * Get the associated Users
-     * 
+     *
      * @return Blog\Entities\User
      */
     public function user()

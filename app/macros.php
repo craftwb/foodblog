@@ -3,16 +3,13 @@
 Form::macro('delete', function($url, $button_label = 'Delete', $parameters = [], $options = [])
 {
 
-    if (empty($parameters))
-    {
+    if (empty($parameters)) {
         $parameters = [
             'method'    =>  'DELETE',
             'class'     =>  'form-group delete-form',
             'url'       =>  $url
         ];
-    }
-    else
-    {
+    } else {
         $parameters['url'] = $url;
         $parameters['method'] = 'DELETE';
     }

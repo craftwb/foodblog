@@ -1,6 +1,5 @@
 <?php
 
-use Blog\Entities\Category;
 use Blog\Repositories\Post\PostRepositoryInterface;
 use Blog\Forms\NewPost;
 

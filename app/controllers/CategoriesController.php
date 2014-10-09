@@ -125,7 +125,7 @@ class CategoriesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		if (!$this->category->delete($id))
+		if ( !$this->category->delete($id) )
         {
             Redirect::back()
                 ->with(Flash::error('Could not delete the category'));

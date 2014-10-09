@@ -23,9 +23,11 @@
 
 	            <tr>
 	                <td>{{  $post->title }}</td>
-	                @foreach($post->categories as $category)
+	                @forelse($post->categories as $category)
 	                	<td>{{ $category->name }}</td>
-	                @endforeach
+	                @empty
+	                    <td></td>
+	                @endforelse
 	                <td>{{  $post->published_at }}</td>
 	                <td>{{  $post->user->name }}</td>
 	                <td>{{  $post->created_at }}</td>
@@ -34,13 +36,13 @@
 	                    <div class="hidden-sm hidden-xs btn-group">
 
 	                        <button type="submit" href="#" class="btn btn-xs btn-success">
-	                            <i class="ace-icon fa fa-check bigger-120"></i>
+	                            {{ link_to_route('posts.show', '', $post->id, [ 'class' => 'ace-icon fa fa-check bigger-120' ])  }}
 	                        </button> 
 
 	                        <button type="submit" class="btn btn-xs btn-info">
 	                            {{ link_to_route('admin.posts.edit', '', $post->id, [ 'class' => 'ace-icon fa fa-pencil bigger-120' ]) }}
 	                        </button>
-	                        	                        
+
 	                        <i class="fa fa-trash bigger-120">
 	                            {{ Form::delete('/admin/posts/'.$post->id, 'Trash', '', [ 'class' => 'btn btn-xs btn-danger' ]) }}
 	                        </i>

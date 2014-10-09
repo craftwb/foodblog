@@ -19,4 +19,16 @@ interface PostRepositoryInterface  {
      * @return mixed
      */
     public function createPost($input);
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function update($id);
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function delete($id);
 } 

@@ -81,6 +81,7 @@ class PostRepository implements PostRepositoryInterface {
      * Updates the Post
      *
      * @param $id
+     * @return mixed|void
      */
     public function update($id)
     {
@@ -95,6 +96,7 @@ class PostRepository implements PostRepositoryInterface {
      * Deletes the Post
      *
      * @param $id
+     * @return mixed|void
      */
     public function delete($id)
     {

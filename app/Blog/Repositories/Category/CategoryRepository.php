@@ -50,6 +50,7 @@ class CategoryRepository implements CategoryRepositoryInterface {
 
     /**
      * @param $id The id of the Category
+     * @return mixed|void
      */
     public function update($id)
     {
@@ -62,6 +63,7 @@ class CategoryRepository implements CategoryRepositoryInterface {
 
     /**
      * @param $id
+     * @return mixed|void
      */
     public function delete($id)
     {

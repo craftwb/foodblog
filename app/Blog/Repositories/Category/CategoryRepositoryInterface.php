@@ -20,4 +20,16 @@ interface CategoryRepositoryInterface {
      */
     public function createCategory($input);
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function update($id);
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function delete($id);
+
 } 
