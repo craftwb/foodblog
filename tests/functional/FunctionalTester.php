@@ -22,7 +22,7 @@ use Codeception\Module\Db;
  * @method void am($role)
  * @method void lookForwardTo($achieveValue)
  * @method void comment($description)
- * @method void haveFriend($name)
+ * @method void haveFriend($name, $actorClass = null)
 */
 class FunctionalTester extends \Codeception\Actor
 {
@@ -872,6 +872,14 @@ class FunctionalTester extends \Codeception\Actor
      * $I->amOnPage('/');
      * // opens /register page
      * $I->amOnPage('/register');
+     * ?>
+     * ```
+     *
+     * Unless you are using one of framework modules, absolute URL can be specified as well:
+     *
+     * ``` php
+     * <?php
+     * $I->amOnPage('http://codeception.com');
      * ?>
      * ```
      *
@@ -1804,7 +1812,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * ``` php
      * <?php
-     * $I->sendAjaxRequest('PUT', /posts/7', array('title' => 'new title');
+     * $I->sendAjaxRequest('PUT', '/posts/7', array('title' => 'new title'));
      *
      * ```
      *

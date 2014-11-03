@@ -30,5 +30,5 @@ interface PostRepositoryInterface  {
      * @param $id
      * @return mixed
      */
-    public function delete($id);
+    public function deletePost($id);
 } 

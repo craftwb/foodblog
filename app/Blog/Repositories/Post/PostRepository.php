@@ -22,6 +22,7 @@ class PostRepository implements PostRepositoryInterface {
     function __construct(Markdown $parser, Post $post)
     {
         $this->parser = $parser;
+
         $this->post = $post;
     }
 
@@ -31,6 +32,7 @@ class PostRepository implements PostRepositoryInterface {
     public function getPaginatedPosts()
     {
         $post = Post::orderBy('created_at', 'DESC');
+        
         return $post->paginate(5);
     }
 
@@ -99,10 +101,10 @@ class PostRepository implements PostRepositoryInterface {
      * @param $id
      * @return mixed|void
      */
-    public function delete($id)
+    public function deletePost($id)
     {
         $post = Post::findOrFail($id);
 
-        $post->delete($post);
+        $post->delete();
     }
 }

@@ -1,18 +1,22 @@
 <?php
-use \FunctionalTester;
 
 class CreatePostCest
 {
-    public function _before(FunctionalTester $I)
+
+    /**
+     * @param \FunctionalTester\UserSteps $I
+     */
+    public function login(FunctionalTester\UserSteps $I)
     {
-        $I->am('an authenticated user');
-        $I->amHttpAuthenticated('pierre@pierreferre.com', 'secret');
-        $I->wantTo('create a new blog post');
+        $I->login();
     }
 
-
-    // tests
-    public function test_it_creates_a_new_post(FunctionalTester $I)
+    /**
+     * @param FunctionalTester $I
+     *
+     * @depends login
+     */
+    public function newPost(FunctionalTester $I)
     {
         $I->amOnPage('/admin/posts/create');
         $I->fillField('title', 'some title');
@@ -20,6 +24,6 @@ class CreatePostCest
         $I->selectOption('category', '2');
         $I->click('Publish');
 
-        $I->seeInDatabase('posts', [ 'title' => 'some title', 'body' => 'some body', 'user_id' => 1 ] );
+        $I->seeInDatabase('posts', [ 'title' => 'some title', 'body' => 'some body' ] );
     }
 }

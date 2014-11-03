@@ -68,7 +68,7 @@ class AdminPostsController extends \BaseController {
 
         $this->post->createPost($input);
 
-        return Redirect::route('admin_dashboard')->with(Flash::success('Post created'));
+        return Redirect::route('admin.posts.index')->with(Flash::success('Post created'));
 	}
 
 
@@ -116,12 +116,7 @@ class AdminPostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-//		if ( !$this->post->delete($id) )
-//        {
-//            Redirect::back()->with(Flash::error('Could not delete this resource'));
-//        }
-
-        $this->post->delete($id);
+        $this->post->deletePost($id);
 
         return Redirect::route('admin.posts.index')->with(Flash::success('Successfully deleted'));
 	}
