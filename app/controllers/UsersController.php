@@ -59,7 +59,9 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return $this->user->getSingleUser($id);
+		$user = $this->user->getSingleUser($id);
+
+		return View::make('admin.users.show', [ 'user' => $user ]);
 	}
 
 	/**

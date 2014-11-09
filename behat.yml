@@ -1,0 +1,8 @@
+default:
+  suites:
+    user_features:
+      paths: [ %paths.base%/features/user ]
+      contexts: [ UserContext ]
+    admin_features:
+      paths: [ %paths.base%/features/admin ]
+      contexts: [ AdminContext ]

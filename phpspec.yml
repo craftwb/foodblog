@@ -1,0 +1,6 @@
+suites:
+  blog_suite:
+    namespace: Blog
+    src_path: app/tests
+    spec_path: app/tests
+    spec_prefix: spec
