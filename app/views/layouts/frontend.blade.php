@@ -37,8 +37,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <blockquote>
-                    <p>She's a greedy little number, I tell thee. And I don't mince my pies.</p>
-                    <small>Farty twat</small>
+                    <p>A less offending line, which serves as a placeholder for something more creative.</p>
+                    <small>Under the cosh Dev</small>
                 </blockquote>
             </div>
         </div>
