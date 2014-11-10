@@ -62,7 +62,7 @@ class PostRepository implements PostRepositoryInterface {
         $user = $this->getCurrentUser();
 
         $this->post->title = $input['title'];
-        $this->post->body = $input['body'];
+        $this->post->body = $this->parser->defaultTransform($input['body']);
         $this->post->published_at = new \DateTime();
 
         $this->post->user()->associate($user);

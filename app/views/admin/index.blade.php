@@ -5,9 +5,9 @@
 <!-- PAGE CONTENT BEGINS -->
 <div class="row">
 
-    @include('layouts.partials.admin.recent')
+    {{--@include('layouts.partials.admin.recent')--}}
 
-    @include('layouts.partials.admin.conversations')
+    {{--@include('layouts.partials.admin.conversations')--}}
     
 </div><!-- /.row -->
 

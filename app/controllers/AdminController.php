@@ -10,7 +10,7 @@ class AdminController extends \BaseController {
 	 */
 	public function index()
 	{
-        if (Auth::user())
+        if (Auth::check())
         {
             return View::make('admin.index');
         }

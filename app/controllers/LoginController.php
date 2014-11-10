@@ -41,6 +41,8 @@ class LoginController extends \BaseController {
 	{
         $this->loginForm->validate($input = Input::only('email', 'password'));
 
+        $input = Input::only('email', 'password');
+
         if (Auth::attempt($input))
         {
             return Redirect::intended('admin/dashboard')->with(Flash::success('You are logged in'));

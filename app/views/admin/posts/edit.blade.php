@@ -14,8 +14,13 @@
                     {{ Form::text('title', null, ['class' => 'form-control'])  }}
                 </div>
 
-                <div class="form-group">
-                    {{ Form::textarea('body', null, ['class' => 'form-control'])  }}
+                <div class="widget-box widget-color-blue">
+                   <div class="widget-header widget-header-small"></div>
+                   <div class="widget-body">
+                      <div class="widget-main no-padding">
+                         {{ Form::textarea('body', strip_tags($post->body), ['class' => 'form-control', 'data-provide' => 'markdown-editable'])  }}
+                      </div>
+                   </div>
                 </div>
 
                 <div>

@@ -11,4 +11,4 @@ $I->fillField('email', 'pierre@pierreferre.com');
 $I->fillField('password', 'secret');
 $I->click('Login');
 
-$I->seeInCurrentUrl('admin');
+$I->assertTrue(Auth::check());

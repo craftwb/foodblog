@@ -3,17 +3,12 @@ namespace FunctionalTester;
 
 class UserSteps extends \FunctionalTester
 {
-    public function login()
+    public function authenticate()
     {
         $I = $this;
-        $I->am('a guest');
-        $I->wantTo('authenticate users to the admin section');
-        $I->amOnPage('/login');
+        $I->am('an authenticated user');
+        $I->seeAuthentication();
 
-        $I->fillField('email', 'pierre@pierreferre.com');
-        $I->fillField('password', 'secret');
-        $I->click('Login');
-
-        $I->seeInCurrentUrl('admin');
+        $I->assertTrue(Auth::check());
     }
 }

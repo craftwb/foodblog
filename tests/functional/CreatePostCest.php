@@ -2,22 +2,15 @@
 
 class CreatePostCest
 {
-
-    /**
-     * @param \FunctionalTester\UserSteps $I
-     */
-    public function login(FunctionalTester\UserSteps $I)
-    {
-        $I->login();
-    }
-
     /**
      * @param FunctionalTester $I
      *
-     * @depends login
      */
     public function newPost(FunctionalTester $I)
     {
+        $I->am('an authenticated user');
+        $I->amHttpAuthenticated('pierre@pierreferre.com', 'secret');
+        
         $I->amOnPage('/admin/posts/create');
         $I->fillField('title', 'some title');
         $I->fillField('body', 'some body');

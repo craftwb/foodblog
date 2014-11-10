@@ -10,7 +10,9 @@
             <div class="col-md-8 col-sm-8">
                 <div class="row">
 
-                    <h1>Blog Posts</h1>
+                    <div class="col-md-12">
+                        <h1>Blog Posts</h1>
+                    </div>
 
                     @foreach($posts as $post)
 
