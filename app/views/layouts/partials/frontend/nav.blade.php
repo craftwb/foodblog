@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><i class="fa fa-recycle"></i> <span>Culinary Honey</span>pie.</a>
+            <a class="navbar-brand" href="/"><i class="fa fa-recycle"></i> <span>Madame Ferré</span></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

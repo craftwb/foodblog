@@ -28,12 +28,7 @@
             </div>
             <div class="col-md-6 col-sm-5">
                 <div class="footer-logo">
-                    <h2><i class="fa fa-recycle"></i> Culinary Honeypie.</h2>
-                    <p>1024 Main Street, Jejeran Plrt Btl<br>+62 (123) 456-7890</p>
-                    <br>
-                    <p class="muted">© 2014 Brand Inc.</p>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Privacy</a>
+                    <h2><i class="fa fa-recycle"></i> Madame Ferré.</h2>
                 </div>
             </div>
         </div>
