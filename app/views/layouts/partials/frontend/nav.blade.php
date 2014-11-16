@@ -18,10 +18,10 @@
                 <li class="{{ set_active('/')  }}">{{ link_to_route('home', 'Home') }}</li>
                 <li class="{{ set_active('blog')  }}">{{ link_to('/blog', 'Blog') }}</li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         @if(Auth::guest())
-                            <li>{{ link_to('/login', 'Login')  }}</li>
+                            <li>{{ link_to('/login', 'Sign In')  }}</li>
                             @else
                             <li>{{ link_to_route('admin_dashboard', 'Dashboard')  }}</li>
                             <li>{{ link_to('/logout', 'Logout')  }}</li>
