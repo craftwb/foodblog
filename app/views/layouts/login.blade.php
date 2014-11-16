@@ -32,5 +32,12 @@
 
     </div> <!-- /container -->
 
+    <script src="/frontend/js/jquery.js"></script>
+    <script src="/frontend/js/bootstrap.js"></script>
+    <script src="/frontend/js/masonry.pkgd.min.js"></script>
+    <script src="/frontend/js/jquery.isotope.min.js"></script>
+    <script src="/frontend/js/jquery.easing.js"></script>
+    <script src="/frontend/js/script.js"></script>
+
   </body>
 </html>
