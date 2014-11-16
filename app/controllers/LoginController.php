@@ -45,7 +45,7 @@ class LoginController extends \BaseController {
 
         if (Auth::attempt($input))
         {
-            return Redirect::intended('admin/dashboard')->with(Flash::success('You are logged in'));
+            return Redirect::intended('admin/dashboard')->with(Flash::success(Auth::getUser()->name.', you are logged in'));
         }
 
         return Redirect::back()->with(Flash::error('Invalid credentials'));
