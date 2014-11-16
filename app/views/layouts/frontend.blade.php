@@ -19,6 +19,7 @@
     <link href="/frontend/css/font-awesome.min.css" rel="stylesheet">
     <link href="/frontend/css/style.css" rel="stylesheet">
     <link href="/frontend/css/responsive.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,7 +33,7 @@
 @include('layouts.partials.frontend.nav')
 
 <!-- begin:header -->
-<section id="header" style="background: url(/frontend/img/img03.jpg) center center;">
+<section id="header" style="background: url('https://s3-eu-west-1.amazonaws.com/craftwb.foodblog/header-bg.jpg') center center;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -100,5 +101,17 @@
 <script src="/frontend/js/jquery.isotope.min.js"></script>
 <script src="/frontend/js/jquery.easing.js"></script>
 <script src="/frontend/js/script.js"></script>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
 </body>
 </html>

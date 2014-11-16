@@ -39,52 +39,6 @@
 
                 </div>
 
-                <hr>
-
-                <!-- begin:comments -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="comment">
-                            <h3>Discussion</h3>
-                            <ul class="comments list-unstyled">
-                                <li class="clearfix">
-                                    <img src="img/avatar.png" class="avatar" alt="danish personal blog and magazine template">
-                                    <div class="post-comments">
-                                        <p class="meta">Dec 18, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Etiam a sapien odio, sit amet
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- end:comments -->
-
-                <hr>
-                <!-- begin:post-comment -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3>Post Comment</h3>
-                        <form class="comment-form">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-
-                                    <input type="text" class="form-control" placeholder="Enter Your Name : ">
-                                    <input type="email" class="form-control" placeholder="Enter Your Email : ">
-                                    <input type="text" class="form-control" placeholder="Enter Your URL : ">
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <textarea class="form-control" rows="4" placeholder="Type Your Comment : "></textarea>
-                                    <input type="submit" class="btn btn-info btn-lg btn-block">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- end:post-comment -->
             </div>
             <!-- end:article -->
 
