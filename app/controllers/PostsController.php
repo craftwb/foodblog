@@ -40,18 +40,18 @@ class PostsController extends \BaseController {
 	}
 
 
-	/**
-	 * Display the specified resource.
-	 * GET /posts/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+    /**
+     * Display the specified resource.
+     * GET /posts/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
 	public function show($id)
 	{
         $post = $this->post->getSinglePost($id);
 
-		return View::make('posts.show', ['post' => $post]);
+		return View::make('posts.show', [ 'post' => $post ]);
 	}
 
 

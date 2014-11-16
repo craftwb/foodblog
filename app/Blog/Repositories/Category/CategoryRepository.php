@@ -2,6 +2,7 @@
 
 
 use Blog\Entities\Category;
+use Illuminate\Support\Str;
 
 class CategoryRepository implements CategoryRepositoryInterface {
 
@@ -39,12 +40,10 @@ class CategoryRepository implements CategoryRepositoryInterface {
      */
     public function createCategory($input)
     {
-        $category = Category::create([
-                'name' => $input['name']
-            ]
-        );
+        $this->category->name = $input['name'];
+        $this->category->slug = Str::slug($input['name']);
 
-        $category->save();
+        $this->category->save();
     }
 
 

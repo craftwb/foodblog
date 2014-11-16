@@ -18,7 +18,7 @@ Route::get('/blog', [
     'as' => 'blog_home',
     'uses' => 'PostsController@index'
 ]);
-Route::get('/blog/posts/{id}', [
+Route::get('/blog/posts/{id}/{slug}', [
     'as'    =>  'show_post',
     'uses'  =>  'PostsController@show'
 ]);

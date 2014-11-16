@@ -18,7 +18,7 @@
 
                         <div class="col-md-12 post-single">
                             <div class="heading-title">
-                                <h2>{{ link_to_route('show_post', $post->title, [ 'id' => $post->id ]) }}</h2>
+                                <h2>{{ link_to_route('show_post', $post->title, [ 'id' => $post->id, 'slug' => $post->slug ]) }}</h2>
                             </div>
                             <div class="post-meta">
                                 <span><em>By <a href="#">{{ $post->user->name  }}</a></em></span>

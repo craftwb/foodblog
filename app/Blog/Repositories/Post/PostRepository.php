@@ -2,6 +2,7 @@
 
 use Blog\Entities\Post;
 use Blog\Entities\User;
+use Illuminate\Support\Str;
 use Michelf\Markdown;
 
 class PostRepository implements PostRepositoryInterface {
@@ -64,6 +65,7 @@ class PostRepository implements PostRepositoryInterface {
         $this->post->title = $input['title'];
         $this->post->body = $this->parser->defaultTransform($input['body']);
         $this->post->published_at = new \DateTime();
+        $this->post->slug = Str::slug($input['title']);
 
         $this->post->user()->associate($user);
         $this->post->save();
