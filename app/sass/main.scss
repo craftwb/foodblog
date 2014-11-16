@@ -1,7 +1,14 @@
+@import "alerts";
+@import "forms";
+
 #footer {
   background-image: none;
 }
 
 #featured {
   background: none;
+}
+
+.buttons {
+  width: 100%;
 }

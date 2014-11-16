@@ -2,24 +2,44 @@
 
 @section('content')
 
-@include('layouts.partials.errors')
+<div class="row">
 
-    {{ Form::open(['route' => 'login.store', 'class' => 'form-signin', 'role' => 'form'])  }}
+    <div class="col-xs-12">
 
-        <h2 class="form-signin-heading">Please sign in</h2>
+        @include('layouts.partials.errors')
 
-        {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email*'])  }}
+        <h1 class="form-signin-heading">Madame Ferré</h1>
 
-        {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password*'])  }}
+        {{ Form::open(['route' => 'login.store', 'class' => 'form-signin', 'role' => 'form'])  }}
 
-        <div class="checkbox">
-            <label>
-                {{ Form::checkbox('checkbox', 'remember')  }} Remember me
-            </label>
-        </div>
+            <div class="form-group">
+                <label for="email">Email*</label>
+                {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Required*'])  }}
+            </div>
 
-        {{ Form::submit('Login', ['class' => 'btn btn-lg btn-primary'])  }}
+            <div class="form-group">
+                <label for="password">Password*</label>
+                {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Required*'])  }}
+            </div>
 
-    {{ Form::close()  }}
+            <div class="form-group">
+
+                <div class="checkbox">
+                    <label>
+                        {{ Form::checkbox('checkbox', 'remember')  }} Remember me
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="form-group buttons">
+                {{ Form::submit('Sign In', ['class' => 'btn btn-info'])  }}
+            </div>
+
+        {{ Form::close()  }}
+
+    </div>
+
+</div>
 
 @stop
