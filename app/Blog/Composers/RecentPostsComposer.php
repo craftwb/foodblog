@@ -1,21 +1,21 @@
 <?php namespace Blog\Composers;
 
-use Blog\Repositories\PostRepository;
+use Blog\Repositories\Post\PostRepositoryInterface;
 
-class ConversationsComposer {
+class RecentPostsComposer {
 
     /**
      * @var PostRepository
      */
     private $post;
 
-    function __construct(PostRepository $post)
+    function __construct(PostRepositoryInterface $post)
     {
         $this->post = $post;
     }
 
     public function compose($view)
     {
-        $view->with('posts', $this->post->published_at->diffForHumans());
+        $view->with('posts', $this->post->getRecentPosts());
     }
 } 

@@ -55,7 +55,6 @@
     <!-- end:content -->
 
     <!-- begin:footer -->
-
     @include('layouts.partials.frontend.footer')
     <!-- end:footer -->
 
