@@ -28,7 +28,7 @@
 	                @empty
 	                    <td></td>
 	                @endforelse
-	                <td>{{  $post->published_at }}</td>
+	                <td>{{  $post->published_at->toFormattedDateString() }}</td>
 	                <td>{{  $post->user->name }}</td>
 	                <td>{{  $post->created_at->toFormattedDateString() }}</td>
 	                <td>{{  $post->updated_at->toFormattedDateString() }}</td>
