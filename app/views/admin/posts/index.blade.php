@@ -30,8 +30,8 @@
 	                @endforelse
 	                <td>{{  $post->published_at }}</td>
 	                <td>{{  $post->user->name }}</td>
-	                <td>{{  $post->created_at }}</td>
-	                <td>{{  $post->updated_at }}</td>
+	                <td>{{  $post->created_at->toFormattedDateString() }}</td>
+	                <td>{{  $post->updated_at->toFormattedDateString() }}</td>
 	                <td>
 	                    <div class="hidden-sm hidden-xs btn-group">
 
