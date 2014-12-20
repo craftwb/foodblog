@@ -43,9 +43,9 @@
 	                            {{ link_to_route('admin.posts.edit', '', $post->id, [ 'class' => 'ace-icon fa fa-pencil bigger-120' ]) }}
 	                        </button>
 
-	                        <i class="fa fa-trash bigger-120">
-	                            {{ Form::delete('/admin/posts/'.$post->id, 'Trash', '', [ 'class' => 'btn btn-xs btn-danger' ]) }}
-	                        </i>
+	                        {{--<i class="fa fa-trash bigger-120">--}}
+	                            {{--{{ Form::delete('/admin/posts/'.$post->id, 'Trash', '', [ 'class' => 'btn btn-xs btn-danger' ]) }}--}}
+	                        {{--</i>--}}
 
 
 	                    </div>

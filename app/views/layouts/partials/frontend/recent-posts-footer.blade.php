@@ -1,4 +1,3 @@
-<h3>Recent Post</h3>
 <ul class="list-unstyled">
 
     @foreach($posts as $post)
