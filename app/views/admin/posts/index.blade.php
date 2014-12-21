@@ -35,18 +35,11 @@
 	                <td>
 	                    <div class="hidden-sm hidden-xs btn-group">
 
-	                        <button type="submit" href="#" class="btn btn-xs btn-success">
-	                            {{ link_to_route('posts.show', '', $post->id, [ 'class' => 'ace-icon fa fa-check bigger-120' ])  }}
-	                        </button> 
+							{{ link_to_route('posts.show', 'View', $post->id, [ 'class' => 'ace-icon fa fa-check' ])  }}
 
-	                        <button type="submit" class="btn btn-xs btn-info">
-	                            {{ link_to_route('admin.posts.edit', '', $post->id, [ 'class' => 'ace-icon fa fa-pencil bigger-120' ]) }}
-	                        </button>
+							{{ link_to_route('admin.posts.edit', 'Edit', $post->id, [ 'class' => 'ace-icon fa fa-pencil' ]) }}
 
-	                        {{--<i class="fa fa-trash bigger-120">--}}
-	                            {{--{{ Form::delete('/admin/posts/'.$post->id, 'Trash', '', [ 'class' => 'btn btn-xs btn-danger' ]) }}--}}
-	                        {{--</i>--}}
-
+							{{ Form::delete('/admin/posts/'.$post->id, 'Trash', '', [ 'class' => 'ace-icon fa fa-trash-o' ]) }}
 
 	                    </div>
 
