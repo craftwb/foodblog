@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3">
                 <div class="widget">
-                    <h3>Recent Post</h3>
+                    <h3>Recent Posts</h3>
                     @include('layouts.partials.frontend.recent-posts-footer')
                 </div>
             </div>

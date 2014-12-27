@@ -33,49 +33,11 @@
 @include('layouts.partials.frontend.nav')
 
 <!-- begin:header -->
-<section id="header" style="background: url('https://s3-eu-west-1.amazonaws.com/craftwb.foodblog/header-bg.jpg') center center;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <blockquote>
-                    <p>A less offending line, which serves as a placeholder for something more creative.</p>
-                    <small>Under the cosh Dev</small>
-                </blockquote>
-            </div>
-        </div>
-    </div>
-    <div class="overlay"></div>
-</section>
+@include('layouts.partials.frontend.header')
 <!-- end:header -->
 
 <!-- begin:featured -->
-<div id="featured">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <div class="featured-container">
-                    <div class="featured-img" style="background: url(/frontend/img/img03.jpg);">
-                        <h3><a href="#">Post title / Your Category..</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="featured-container">
-                    <div class="featured-img" style="background: url(/frontend/img/img04.jpg);">
-                        <h3><a href="#">Post title / Your Category..</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="featured-container">
-                    <div class="featured-img" style="background: url(/frontend/img/img05.jpg);">
-                        <h3><a href="#">Post title / Your Category..</a></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('layouts.partials.frontend.featured')
 <!-- end:featured -->
 
 <!-- begin:content -->

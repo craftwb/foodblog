@@ -3,7 +3,7 @@
             <!-- #section:basics/footer -->
             <div class="footer-content">
                 <span class="bigger-120">
-                    <span class="blue bolder">Culinary Honeypie</span>
+                    <span class="blue bolder">Madame Ferré</span>
                     Craftwb &copy; {{ date('Y')  }}
                 </span>
 

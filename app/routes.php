@@ -29,7 +29,7 @@ Route::when('admin/*', 'auth');
 Route::resource('/admin/posts', 'AdminPostsController', [
     'except' => [ 'show' ]
 ]);
-Route::resource('/admin/categories', 'CategoriesController');
+Route::resource('/admin/categories', 'AdminCategoriesController');
 Route::resource('/admin/users', 'UsersController');
 Route::get('/admin/dashboard', [
     'as' => 'admin_dashboard',

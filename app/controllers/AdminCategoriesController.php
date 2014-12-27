@@ -3,7 +3,7 @@
 use Blog\Forms\NewCategory;
 use Blog\Repositories\Category\CategoryRepositoryInterface;
 
-class CategoriesController extends \BaseController {
+class AdminCategoriesController extends \BaseController {
 
     /**
      * @var CategoryRepositoryInterface
