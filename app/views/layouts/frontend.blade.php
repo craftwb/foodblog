@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="/frontend/img/favicon.png">
 
-    <title>Environment = {{ app::environment() }}</title>
+    <title>madameferre.com | Home</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/frontend/css/bootstrap.css" rel="stylesheet">
