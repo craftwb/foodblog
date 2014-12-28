@@ -9,6 +9,6 @@ $I->amOnPage('/login');
 
 $I->fillField('email', 'pierre@pierreferre.com');
 $I->fillField('password', 'secret');
-$I->click('Login');
+$I->click('Sign In');
 
 $I->assertTrue(Auth::check());

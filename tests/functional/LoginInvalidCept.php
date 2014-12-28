@@ -10,6 +10,6 @@ $I->amOnPage('/login');
 
 $I->fillField('email', 'fredo.f@gmail.com');
 $I->fillField('password', 'test');
-$I->click('Login');
+$I->click('Sign In');
 
 $I->assertFalse(Auth::check());
