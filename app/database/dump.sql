@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.38-0ubuntu0.14.04.1)
 # Database: foodblog
-# Generation Time: 2014-11-16 23:04:41 +0000
+# Generation Time: 2014-12-28 00:02:50 +0000
 # ************************************************************
 
 
@@ -60,8 +60,8 @@ CREATE TABLE `category_post` (
   PRIMARY KEY (`id`),
   KEY `category_post_category_id_index` (`category_id`),
   KEY `category_post_post_id_index` (`post_id`),
-  CONSTRAINT `category_post_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `category_post_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE
+  CONSTRAINT `category_post_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `category_post_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 LOCK TABLES `category_post` WRITE;
@@ -78,7 +78,8 @@ VALUES
 	(7,2,6,'2014-09-20 23:16:45','2014-09-20 23:16:45'),
 	(8,2,7,'2014-09-20 23:16:56','2014-09-20 23:16:56'),
 	(9,2,8,'2014-09-20 23:17:06','2014-09-20 23:17:06'),
-	(10,1,9,'2014-09-20 23:17:18','2014-09-20 23:17:18');
+	(10,1,9,'2014-09-20 23:17:18','2014-09-20 23:17:18'),
+	(11,1,11,'0000-00-00 00:00:00','0000-00-00 00:00:00');
 
 /*!40000 ALTER TABLE `category_post` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -98,8 +99,8 @@ CREATE TABLE `file_post` (
   PRIMARY KEY (`id`),
   KEY `file_post_file_id_index` (`file_id`),
   KEY `file_post_post_id_index` (`post_id`),
-  CONSTRAINT `file_post_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `file_post_file_id_foreign` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE CASCADE
+  CONSTRAINT `file_post_file_id_foreign` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `file_post_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
@@ -172,7 +173,7 @@ LOCK TABLES `posts` WRITE;
 
 INSERT INTO `posts` (`id`, `title`, `slug`, `body`, `user_id`, `published_at`, `created_at`, `updated_at`)
 VALUES
-	(1,'Impedit et fuga sint magni perspiciatis suscipit.','illo-velit-quibusdam-ullam-sit-esse-ut-consequuntur','Est aut sed enim et molestias. Enim praesentium omnis fuga dignissimos at delectus suscipit. Omnis non ab aut cum.',2,'2014-11-09 23:43:50','2014-11-16 23:03:29','2014-11-16 23:03:29'),
+	(1,'Impedit et fuga sint magni perspiciatis suscipit.','illo-velit-quibusdam-ullam-sit-esse-ut-consequuntur','Est aut sed enim et molestias. Enim ### praesentium omnis fuga dignissimos at delectus suscipit. Omnis non ab aut cum.\r\n',2,'2014-11-09 23:43:50','2014-11-16 23:03:29','2014-12-21 01:01:24'),
 	(2,'Natus sit culpa quam unde saepe eum.','itaque-voluptatem-dolorem-voluptas-minus-voluptatem-placeat','Saepe enim odit et dignissimos. Consequatur deserunt voluptatem error neque libero.',2,'2014-11-13 07:18:47','2014-11-16 23:03:29','2014-11-16 23:03:29'),
 	(3,'Eligendi molestias voluptatem itaque voluptas neque.','quia-molestiae-aut-non-illo-non-atque','Eius dolor iusto culpa eos inventore magnam. Quod aut rerum quia qui temporibus tempore. Quo autem est maxime voluptas dolorem.',2,'2014-11-16 07:44:07','2014-11-16 23:03:29','2014-11-16 23:03:29'),
 	(4,'Molestiae et deserunt libero error et maxime dolorem.','et-dolore-sed-quos-accusamus-quia-adipisci-veniam','Quas tenetur rerum illum voluptas in. Perspiciatis voluptate perferendis tempora eos harum. Commodi distinctio natus accusamus et.',1,'2014-11-12 02:50:17','2014-11-16 23:03:29','2014-11-16 23:03:29'),
@@ -181,7 +182,8 @@ VALUES
 	(7,'Delectus voluptatem quos sit quidem esse blanditiis voluptate.','minima-cum-cupiditate-sapiente-a-molestiae-deleniti-ducimus-consequatur','Exercitationem ducimus quis facilis. Non et sint dolorum qui.',1,'2014-11-10 05:09:59','2014-11-16 23:03:29','2014-11-16 23:03:29'),
 	(8,'Qui magnam soluta consectetur ea.','modi-totam-qui-corporis-nostrum','Consectetur in rerum fuga quia vero at. Error autem consectetur molestiae nam. Sunt deleniti earum et corrupti modi.',1,'2014-11-14 19:48:06','2014-11-16 23:03:29','2014-11-16 23:03:29'),
 	(9,'Cum labore voluptates sit est iure labore.','recusandae-sed-quidem-velit-autem-vero-nam-quia-est','Minima necessitatibus doloribus voluptas soluta fuga. Ut natus sed enim consequuntur.',2,'2014-11-13 18:54:02','2014-11-16 23:03:29','2014-11-16 23:03:29'),
-	(10,'Incidunt minima non rerum qui.','et-a-quia-sunt-asperiores-illum-consequatur-a-pariatur','Facilis neque sed necessitatibus. Tempora ratione esse error sunt quasi.',2,'2014-11-15 21:16:05','2014-11-16 23:03:29','2014-11-16 23:03:29');
+	(10,'Incidunt minima non rerum qui.','et-a-quia-sunt-asperiores-illum-consequatur-a-pariatur','Facilis neque sed necessitatibus. Tempora ratione esse error sunt quasi.',2,'2014-11-15 21:16:05','2014-11-16 23:03:29','2014-11-16 23:03:29'),
+	(11,'Test','test','<h3>This is a header, Ged</h3>\n\n<p><strong>Very strong</strong></p>\n',1,'2014-12-21 01:02:22','2014-12-21 01:02:22','2014-12-21 01:02:22');
 
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
